@@ -2,6 +2,9 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
+    <i class="fas fa-check"></i>
+    <i class="fas fa-check"></i>
+    <i class="fas fa-dove"></i>
     <ul>
       <li>
         <a
