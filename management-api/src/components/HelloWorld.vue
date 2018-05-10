@@ -5,6 +5,11 @@
     <i class="fas fa-check"></i>
     <i class="fas fa-check"></i>
     <i class="fas fa-dove"></i>
+    <div class="field">
+      <div class="control">
+        <input class="input is-primary" type="text" placeholder="Primary input">
+      </div>
+    </div>
     <ul>
       <li>
         <a
