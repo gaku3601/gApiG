@@ -2,7 +2,7 @@
   <div class="Management">
     <div class="container">
       <div class="header">Header {{msg}}</div>
-      <div class="sidemenu">SideMenu</div>
+      <div class="sidemenu"><SideMenu /></div>
       <div class="content">
         <router-view></router-view>
       </div>
@@ -12,12 +12,16 @@
 </template>
 
 <script>
+import SideMenu from './SideMenu'
 export default {
   name: 'Management',
   data () {
     return {
       msg: 'Welcome to Management!! is Header'
     }
+  },
+  components: {
+    SideMenu
   }
 }
 </script>
