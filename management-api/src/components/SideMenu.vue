@@ -8,8 +8,11 @@
         <li><a>Dashboard</a></li>
         <li><a>Admin List</a></li>
         <li><a>User List</a></li>
+        <li><a>API Controll</a></li>
+        <li><a>Settings</a></li>
       </ul>
     </aside>
+    </div>
   </div>
 </template>
 
@@ -25,4 +28,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.sidemenu{
+  border-right: solid 1px #BDBDBD;
+}
 </style>

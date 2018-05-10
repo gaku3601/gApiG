@@ -33,7 +33,7 @@ export default {
   min-height: 100vh;
   display: grid;
   grid-template-rows: 52px 1fr 30px;
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 200px 1fr;
 }
 .header{
   grid-row: 1 / 2;
@@ -42,6 +42,7 @@ export default {
 .sidemenu{
   grid-row: 2 / 3;
   grid-column: 1 / 2;
+  height: 100%;
 }
 .content{
   grid-row: 2 / 3;
