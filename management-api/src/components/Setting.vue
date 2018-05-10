@@ -6,10 +6,10 @@
 
 <script>
 export default {
-  name: 'DashBoard',
+  name: 'Setting',
   data () {
     return {
-      msg: 'Welcome to DashBoard!!'
+      msg: 'Welcome to Setting!!'
     }
   }
 }

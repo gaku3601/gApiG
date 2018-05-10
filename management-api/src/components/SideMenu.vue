@@ -5,11 +5,11 @@
         Menu
       </p>
       <ul class="menu-list">
-        <li><a>Dashboard</a></li>
-        <li><a>Admin List</a></li>
-        <li><a>User List</a></li>
-        <li><a>API Controll</a></li>
-        <li><a>Settings</a></li>
+        <li><router-link to="/management">Dashboard</router-link></li>
+        <li><router-link to="/admin">Admin List</router-link></li>
+        <li><router-link to="/user">User List</router-link></li>
+        <li><router-link to="/api">Api Controll</router-link></li>
+        <li><router-link to="/setting">Setting</router-link></li>
       </ul>
     </aside>
     </div>

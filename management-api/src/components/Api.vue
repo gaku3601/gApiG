@@ -6,10 +6,10 @@
 
 <script>
 export default {
-  name: 'DashBoard',
+  name: 'Api',
   data () {
     return {
-      msg: 'Welcome to DashBoard!!'
+      msg: 'Welcome to Api!!'
     }
   }
 }
