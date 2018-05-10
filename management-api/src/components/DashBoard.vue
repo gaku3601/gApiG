@@ -13,9 +13,7 @@
         </div>
       </div>
       <div class="control">
-        <router-link to="/dashboard">
-          <button class="button is-primary">Login</button>
-        </router-link>
+        <button class="button is-primary">Login</button>
       </div>
     </div>
   </div>
@@ -23,10 +21,10 @@
 
 <script>
 export default {
-  name: 'Login',
+  name: 'DashBoard',
   data () {
     return {
-      msg: 'Welcome to gApiG!!'
+      msg: 'Welcome to DashBoard!!'
     }
   }
 }
