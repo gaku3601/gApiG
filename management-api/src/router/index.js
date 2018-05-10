@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/components/Login'
 import DashBoard from '@/components/DashBoard'
+import Management from '@/components/Management'
 
 Vue.use(Router)
 
@@ -13,9 +14,12 @@ export default new Router({
       component: Login
     },
     {
-      path: '/dashboard',
-      name: 'DashBoard',
-      component: DashBoard
+      path: '/management',
+      name: 'Management',
+      component: Management,
+      children: [
+        { path: '', name: 'dashboard', component: DashBoard }
+      ]
     }
   ]
 })

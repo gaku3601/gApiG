@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="control">
-        <router-link to="/dashboard">
+        <router-link to="/management">
           <button class="button is-primary">Login</button>
         </router-link>
       </div>
