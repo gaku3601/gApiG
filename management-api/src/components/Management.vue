@@ -1,7 +1,7 @@
 <template>
   <div class="Management">
-    <div class="container">
-      <div class="header">Header {{msg}}</div>
+    <div class="grid">
+      <div class="header"><NavBar /></div>
       <div class="sidemenu"><SideMenu /></div>
       <div class="content">
         <router-view></router-view>
@@ -13,25 +13,26 @@
 
 <script>
 import SideMenu from './SideMenu'
+import NavBar from './NavBar'
 export default {
   name: 'Management',
   data () {
     return {
-      msg: 'Welcome to Management!! is Header'
     }
   },
   components: {
-    SideMenu
+    SideMenu,
+    NavBar
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.container{
+.grid{
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 100px 1fr 30px;
+  grid-template-rows: 52px 1fr 30px;
   grid-template-columns: 150px 1fr;
 }
 .header{
