@@ -7,6 +7,7 @@ import Admin from '@/components/Admin'
 import User from '@/components/User'
 import Api from '@/components/Api'
 import Setting from '@/components/Setting'
+import InsertApi from '@/components/InsertApi'
 
 Vue.use(Router)
 
@@ -26,6 +27,7 @@ export default new Router({
         { path: '/admin', name: 'admin', component: Admin },
         { path: '/user', name: 'user', component: User },
         { path: '/api', name: 'api', component: Api },
+        { path: '/insertapi', name: 'insertapi', component: InsertApi },
         { path: '/setting', name: 'setting', component: Setting }
       ]
     }

@@ -12,7 +12,6 @@
         <li><router-link to="/setting">Setting</router-link></li>
       </ul>
     </aside>
-    </div>
   </div>
 </template>
 
