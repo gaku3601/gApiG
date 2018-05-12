@@ -1,0 +1,23 @@
+version: 2.0
+
+jobs:
+    product:
+        docker:
+            - image: gaku3601/circleci-base-image:latest
+        steps:
+            - checkout
+            - setup_remote_docker
+            - run: echo "product!!!"
+            - run: chmod 777 ./.circleci/product.deploy.sh
+            - run: bash ./.circleci/product.deploy.sh
+workflows:
+    version: 2
+    test_and_deploy:
+        jobs:
+            - product:
+                context: mytestserver
+                filters:
+                    branches:
+                      ignore: /.*/
+                    tags:
+                      only: /.*/
