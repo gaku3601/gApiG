@@ -1,6 +1,17 @@
 version: '3'
 
 services:
+    backend:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - 8093:8080
+        links:
+            - db:db
+        environment:
+            - DB_HOST=db
+            - DB_PORT=5432
     db:
         image: gaku3601/ja-postgresql:10.0
         ports:

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/http/httptest"
+	"os"
 	"strings"
 	"testing"
 
@@ -17,7 +18,7 @@ import (
 
 func TestIndexApi(t *testing.T) {
 	// setup
-	con := fmt.Sprintf("user=%s dbname=%s host=%s port=%s sslmode=disable", "postgres", "app", "localhost", "5432")
+	con := fmt.Sprintf("user=%s dbname=%s host=%s port=%s sslmode=disable", "postgres", "app", os.Getenv("DB_HOST"), os.Getenv("DB_PORT"))
 	db, _ := gorm.Open("postgres", con)
 	defer db.Close()
 	// apiテーブルの全削除

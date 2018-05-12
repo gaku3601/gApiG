@@ -8,3 +8,9 @@ docker build -t registry.gitlab.com/gaku3601/${ProjectName}/${ContainerName}:${C
 docker tag registry.gitlab.com/gaku3601/${ProjectName}/${ContainerName}:${CIRCLE_TAG} registry.gitlab.com/gaku3601/${ProjectName}/${ContainerName}:latest
 docker push registry.gitlab.com/gaku3601/${ProjectName}/${ContainerName}:${CIRCLE_TAG}
 docker push registry.gitlab.com/gaku3601/${ProjectName}/${ContainerName}:latest
+
+ContainerName="backendapp"
+docker build -t registry.gitlab.com/gaku3601/${ProjectName}/${ContainerName}:${CIRCLE_TAG} ./backendapp/.
+docker tag registry.gitlab.com/gaku3601/${ProjectName}/${ContainerName}:${CIRCLE_TAG} registry.gitlab.com/gaku3601/${ProjectName}/${ContainerName}:latest
+docker push registry.gitlab.com/gaku3601/${ProjectName}/${ContainerName}:${CIRCLE_TAG}
+docker push registry.gitlab.com/gaku3601/${ProjectName}/${ContainerName}:latest
