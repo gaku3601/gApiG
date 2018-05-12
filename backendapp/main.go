@@ -11,7 +11,7 @@ func main() {
 
 	// Routes
 	e.GET("/api", api.Index)
-	e.POST("/api", api.New)
+	e.POST("/api", api.Create)
 
 	// Start server
 	e.Run(standard.New(":8093"))

@@ -22,7 +22,7 @@ func TestCreateUser(t *testing.T) {
 	c := e.NewContext(standard.NewRequest(req, e.Logger()), standard.NewResponse(rec, e.Logger()))
 
 	// Assertions
-	if assert.NoError(t, New(c)) {
+	if assert.NoError(t, Create(c)) {
 		assert.Equal(t, http.StatusCreated, rec.Code)
 		// jsonチェック
 		name := gjson.Get(rec.Body.String(), "name").String()

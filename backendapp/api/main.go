@@ -15,7 +15,7 @@ func Index(c echo.Context) error {
 	return c.String(http.StatusOK, fmt.Sprintf("Hello, World!\noffset:%s\nlimit:%s\n", offset, limit))
 }
 
-func New(c echo.Context) error {
+func Create(c echo.Context) error {
 	bufbody := new(bytes.Buffer)
 	bufbody.ReadFrom(c.Request().Body())
 	body := bufbody.String()
