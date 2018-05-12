@@ -45,7 +45,7 @@ func TestIndexApi(t *testing.T) {
 		json := rec.Body.String()
 		r := gjson.Parse(json)
 		assert.Equal(t, 3, len(r.Array()))
-		// offsetチェック(DEC IDも共にチェック)
+		// offsetチェック(DESC IDも共にチェック)
 		assert.Equal(t, "test api:7", r.Array()[0].Get("name").String())
 	}
 }
@@ -72,4 +72,13 @@ func TestCreateApi(t *testing.T) {
 		access_path := gjson.Get(rec.Body.String(), "access_path").String()
 		assert.Equal(t, "http://google.com/", access_path)
 	}
+}
+
+func TestShowApi(t *testing.T) {
+}
+
+func TestUpdateApi(t *testing.T) {
+}
+
+func TestDestroyApi(t *testing.T) {
 }
