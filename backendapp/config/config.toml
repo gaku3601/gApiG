@@ -1,0 +1,10 @@
+[development]
+env = "development"
+	[development.database]
+	host = "localhost"
+	port = 5432
+[production]
+env = "production"
+	[production.database]
+	host = "db"
+	port = 5432

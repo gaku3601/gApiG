@@ -8,6 +8,7 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/gaku3601/gApiG/backendapp/config"
 	"github.com/jinzhu/gorm"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/engine/standard"
@@ -16,9 +17,18 @@ import (
 	"github.com/tidwall/gjson"
 )
 
+func TestMain(m *testing.M) {
+	// ここにテストの初期化処理
+	os.Chdir("../")
+	config.Set()
+	code := m.Run()
+	// ここでテストのお片づけ
+	os.Exit(code)
+}
+
 func TestIndexApi(t *testing.T) {
 	// setup
-	con := fmt.Sprintf("user=%s dbname=%s host=%s port=%s sslmode=disable", "postgres", "app", os.Getenv("DB_HOST"), os.Getenv("DB_PORT"))
+	con := fmt.Sprintf("user=%s dbname=%s host=%s port=%s sslmode=disable", "postgres", "app", config.Value.GetString("database.host"), config.Value.GetString("database.port"))
 	db, _ := gorm.Open("postgres", con)
 	defer db.Close()
 	// apiテーブルの全削除
