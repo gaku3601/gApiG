@@ -2,17 +2,18 @@ package api
 
 import (
 	"bytes"
-	"fmt"
 	"net/http"
+	"strconv"
 
 	"github.com/labstack/echo"
 	"github.com/tidwall/gjson"
 )
 
 func Index(c echo.Context) error {
-	offset := c.QueryParam("offset")
-	limit := c.QueryParam("limit")
-	return c.String(http.StatusOK, fmt.Sprintf("Hello, World!\noffset:%s\nlimit:%s\n", offset, limit))
+	offset, _ := strconv.Atoi(c.QueryParam("offset"))
+	limit, _ := strconv.Atoi(c.QueryParam("limit"))
+	list := indexApi(offset, limit)
+	return c.JSON(http.StatusOK, list)
 }
 
 func Create(c echo.Context) error {

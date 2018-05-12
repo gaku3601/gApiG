@@ -15,6 +15,16 @@ type Api struct {
 	AccessPath string `json:"access_path"`
 }
 
+func indexApi(offset int, limit int) []*Api {
+	con := fmt.Sprintf("user=%s dbname=%s host=%s port=%s sslmode=disable", "postgres", "app", "localhost", "5432")
+	db, _ := gorm.Open("postgres", con)
+	defer db.Close()
+
+	var list []*Api
+	db.Order("id DESC").Offset(offset).Limit(limit).Find(&list)
+	return list
+}
+
 func createApi(name string, path string, method string, accessPath string) (*Api, error) {
 	con := fmt.Sprintf("user=%s dbname=%s host=%s port=%s sslmode=disable", "postgres", "app", "localhost", "5432")
 	db, _ := gorm.Open("postgres", con)
