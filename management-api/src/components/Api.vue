@@ -22,7 +22,7 @@
         </tr>
       </tfoot>
       <tbody>
-        <tr v-for="(v ,i) in this.data" :key="i">
+        <tr v-for="(v ,i) in this.list" :key="i">
           <th>{{v.name}}</th>
           <td>{{v.path}}</td>
           <td style="border-right: solid 1px #BDBDBD;">{{v.method}}</td>
@@ -40,12 +40,20 @@ export default {
   data () {
     return {
       msg: 'Welcome to Api!!',
-      data: [
-        {name: 'Fetch Image List', path: '/image', method: 'GET', accessPath: 'http://imagecontainer:8080/'},
-        {name: 'Update Image', path: '/image/:id', method: 'PUTS', accessPath: 'http://imagecontainer:8080/'},
-        {name: 'Insert Image', path: '/image', method: 'POST', accessPath: 'http://imagecontainer:8080/'},
-        {name: 'Delete Image', path: '/image/:id', method: 'DELETE', accessPath: 'http://imagecontainer:8080/'}
-      ]
+      list: []
+    }
+  },
+  created: function () {
+    this.index()
+  },
+  methods: {
+    index: function () {
+      this.$store.dispatch('api/index', {})
+        .then(data => {
+          for (let item of data) {
+            console.log(item)
+          }
+        })
     }
   }
 }
