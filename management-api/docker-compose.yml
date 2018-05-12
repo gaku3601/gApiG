@@ -7,3 +7,5 @@ services:
             dockerfile: Dockerfile
         ports:
             - 8888:80
+        environment:
+            - BACKEND_URL=http://150.95.142.67:8093

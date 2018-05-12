@@ -12,10 +12,5 @@ WORKDIR /app
 COPY . .
 RUN rm -rf node_modules/
 RUN npm install
-RUN npm run build
 
-# 配置処理
-WORKDIR /usr/share/nginx/html
-RUN cp -r /app/dist/* .
-
-CMD nginx -g "daemon off;"
+CMD bash /app/start.sh

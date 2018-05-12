@@ -51,7 +51,7 @@ export default {
       this.$store.dispatch('api/index', {})
         .then(data => {
           for (let item of data) {
-            console.log(item)
+            this.list.push({name: item.name})
           }
         })
     }
